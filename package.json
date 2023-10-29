@@ -9,6 +9,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
+<<<<<<< HEAD
+=======
+    "react-router-dom": "^6.17.0",
+>>>>>>> 739c28376d837d511839ab95d841a5a378c98a60
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
