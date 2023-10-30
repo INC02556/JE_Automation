@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useRef} from 'react'
 import MJNavbar from '../components/ManualJournal/MJNavbar';
 import MJForm from '../components/ManualJournal/MJForm';
 import MJTable from '../components/ManualJournal/MJTable';
@@ -52,10 +52,14 @@ const accountsPayable = [
 
 
 const ManualJournal = () => {
+  const  [data,setData]=useState([])
+  // const [files, setFiles] = useState([]);
+
+  const tableRef=useRef(null)
     // const [selectedInput, setSelectedInput] = useState(accountsRecievable);
     return (
-      <div className="mx-5 font-roborto">
-        <MJNavbar/>
+      <div className="mx-5 font-roborto shadow-sm">
+        <MJNavbar setData={setData} tableRef={tableRef}/>
         <main className="p-3 ">
           <p className="text-gray-600 inline-flex gap-2 text-sm">
             <strong>Note:</strong>
@@ -78,8 +82,8 @@ const ManualJournal = () => {
             </select>
           </div> */}
   
-         <MJForm/>
-          <MJTable/>
+         <MJForm data={data} />
+          <MJTable data={data} tableRef={tableRef}/>
         </main>
       </div>
     );

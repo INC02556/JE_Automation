@@ -1,26 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes,Route } from 'react-router';
+import MainPage from './pages/MainPage';
+import ManualJournal from './pages/ManualJournal';
 
 
 function App() {
   return (
-    <div className="">
-      <h1 className="text-red-500">je Autmation</h1>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />}></Route>
+      <Route path="manualjournal" element={<ManualJournal />}></Route>
+    </Routes>
   );
 }
 

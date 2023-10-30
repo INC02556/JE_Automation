@@ -13,8 +13,10 @@ const generalLedger = [
   "Exchange Rate",
 ];
 
-const MJForm = () => {
+const MJForm = ({data}) => {
+
   return (
+
     <div className="mt-5">
       <h2 className="text-2xl mb-5 font-semibold ">
         General Ledger Manual Process
@@ -24,7 +26,7 @@ const MJForm = () => {
           return (
             <div>
               <label class="">{int}</label>
-              <input class=" " type="text" />
+              <input value={data[0] && data[0][int] } class=" " type="text" />
             </div>
           );
         })}
