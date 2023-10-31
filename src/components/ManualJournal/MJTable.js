@@ -37,7 +37,15 @@ const tableHeader = [
   "Sales Employee",
 ];
 
-const MJTable = ({ tabledata, tableRef }) => {
+const MJTable = ({ data,setUpdateData, tableRef }) => {
+  const tabledata = data.slice(2);
+
+  function handleInputChange(e, rowIndex, columnIndex) {
+    const updateData = data
+    updateData[columnIndex][rowIndex] = e.target.value
+    setUpdateData(updateData)
+
+  }
   return (
     <section className="mt-10">
       <h2 className="text-xl font-semibold  text-[#1D1D11] mb-3">
@@ -71,19 +79,25 @@ const MJTable = ({ tabledata, tableRef }) => {
                 </td>
               </tr>
             ) : (
-              tabledata?.map((row, index) => (
+              tabledata?.map((row, columnIndex) => (
                 <tr
                   className="bg-white border-b  dark:border-gray-700"
-                  key={index}
+                  key={columnIndex}
                 >
-                  {Object.values(row).map((value, index) => {
-                    if (index !== 0) {
+                  {Object.keys(row).map((key, rowIndex) => {
+                    if (rowIndex !== 0) {
                       return (
                         <td
-                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
-                          key={index}
+                          className="px-1 py-4 font-medium text-gray-900 whitespace-nowrap"
+                          key={rowIndex}
                         >
-                          {value}
+                          <input
+                            type="text"
+                            defaultValue={row[key]}
+                            onChange={(e) =>
+                              handleInputChange(e, key, columnIndex + 2)
+                            }
+                          />
                         </td>
                       );
                     }

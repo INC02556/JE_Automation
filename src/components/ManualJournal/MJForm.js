@@ -13,7 +13,13 @@ const generalLedger = [
   "Exchange Rate",
 ];
 
-const MJForm = ({ headerdata  }) => {
+const MJForm = ({ data ,setUpdateData }) => {
+  const headerdata = data[0]
+  function updateHeaderData(e,int){
+    const updateData = data
+    updateData[0][int] = e.target.value
+    setUpdateData(updateData)
+  }
 
   return (
     <div className="mt-5">
@@ -21,29 +27,6 @@ const MJForm = ({ headerdata  }) => {
         General Ledger Manual Process
       </h2>
       <form className="grid grid-cols-3 gap-x-10 gap-y-5 text-black text-sm">
-        {/* {generalLedger?.map((int, index) => {
-          return (
-            <div key={index}>
-              <label className="">{int}</label>
-              {data[0] ? (
-                <input
-                  id="GLMPinput"
-                  defaultValue={data[0] && data[0][int]}
-                  className=" "
-                  type="text"
-                />
-              ) : (
-                <input
-                  id="GLMPinput"
-                  defaultValue=""
-                  className=" "
-                  type="text"
-                />
-              )}
-            </div>
-          );
-        })} */}
-        
         {generalLedger?.map((int, index) => {
           return (
             <div key={index}>
@@ -51,33 +34,16 @@ const MJForm = ({ headerdata  }) => {
               
                 <input
                   id="GLMPinput"
+                  name={int}
                   defaultValue={headerdata ? headerdata[int] : "" }
                   className=" "
+                  onChange={(e) => updateHeaderData(e,int)}
                   type="text"
                 />
             </div>
           );
         })}
-
-
-
-
       </form>
-
-
-      {/* {header &&  Object.values(header)?.map((hitem, index) => {
-          return (
-            <div key={index}>
-              <label className="">{hitem}</label>
-                <input
-                  id="GLMPinput"
-                  value={headerData.hitem}
-                  className=" "
-                  type="text"
-                />
-            </div>
-          );
-        })} */}
     </div>
   );
 };

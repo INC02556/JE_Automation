@@ -5,7 +5,7 @@ import { ImAttachment } from "react-icons/im";
 import * as XLSX from "xlsx";
 import ExcelTemplate from "../../tools/files/GL_MJ.xlsx";
 
-const MJNavbar = ({ setData, tableRef }) => {
+const MJNavbar = ({ data, setData, updateData, tableRef }) => {
   const fileInputField = useRef(null);
   const attachInputField = useRef(null);
   const [files, setFiles] = useState([]);
@@ -34,12 +34,7 @@ const MJNavbar = ({ setData, tableRef }) => {
           defval: null,
           raw: false,
         });
-        const resultData = {};
-        resultData.header = parsedData[0];
-        // resultData.headerData = parsedData[1];
-        // resultData.tableHeader = parsedData[2];
-        resultData.tableItems = parsedData.slice(2);
-        setData(resultData);
+        setData(parsedData);
       };
     }
   };
@@ -51,6 +46,32 @@ const MJNavbar = ({ setData, tableRef }) => {
     link.click();
     document.body.removeChild(link);
   };
+  const downloadFile = (data, filename) => {
+    const blob = new Blob([data], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
+  function handleSubmitClick() {
+    if (updateData && updateData.length > 0) {
+      const worksheet = XLSX.utils.json_to_sheet(data);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+      const excelData = XLSX.write(workbook, {
+        bookType: "xlsx",
+        type: "array",
+      });
+      downloadFile(excelData, "data.xlsx");
+    } else {
+      alert("Please change some data");
+    }
+  }
 
   return (
     <nav className="mt-10 p-2 border-y-[1px] bg-[#eff4f5ff] border-gray-400 ">
@@ -115,7 +136,10 @@ const MJNavbar = ({ setData, tableRef }) => {
           </button>
 
           <button className="btn-blue">Simulate</button>
-          <button className="btn-blue opacity-50 cursor-not-allowed">
+          <button
+            onClick={handleSubmitClick}
+            className="btn-blue opacity-50 cursor-not-allowed"
+          >
             Submit
           </button>
         </div>

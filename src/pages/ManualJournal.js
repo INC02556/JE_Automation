@@ -50,12 +50,13 @@ const accountsPayable = [
 
 const ManualJournal = () => {
   const [data, setData] = useState([]);
+  const [updateData, setUpdateData] = useState([]);
   const tableRef = useRef(null);
-  console.log(data.tableItems)
+  
   // const [selectedInput, setSelectedInput] = useState(accountsRecievable);
   return (
     <div className="mx-5 font-roborto shadow-sm">
-      <MJNavbar setData={setData} tableRef={tableRef} />
+      <MJNavbar data={data} setData={setData} updateData={updateData} tableRef={tableRef} />
       <main className="p-3 ">
         <p className="text-gray-600 inline-flex gap-2 text-sm">
           <strong>Note:</strong>
@@ -78,8 +79,8 @@ const ManualJournal = () => {
             </select>
           </div> */}
 
-        <MJForm headerdata={data.header}  />
-        <MJTable tabledata={data.tableItems} tableRef={tableRef} />
+        <MJForm data={data}  setUpdateData={setUpdateData} />
+        <MJTable data={data} setUpdateData={setUpdateData}   tableRef={tableRef} />
       </main>
     </div>
   );
