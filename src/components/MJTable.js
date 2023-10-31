@@ -42,24 +42,24 @@ const MJTable = () => {
   return (
     <div className="mt-6 mx-5 ">
       <span className="text-2xl font-roborto">Item details</span>
-      <div class="mt-4 overflow-x-auto">
-        <table class=" text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="font-roborto text-sm text-black  bg-gray-50 dark:bg-blue-100 ">
+      <div className="mt-4 overflow-x-auto">
+        <table className=" text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="font-roborto text-sm text-black  bg-gray-50 dark:bg-blue-100 ">
             <tr>
               {tableHeaders.map(({ id, headerName }) => (
-                <th scope="col" class="px-8 py-4 font-medium">
+                <th key={id} scope="col" className="px-8 py-4 font-medium">
                   {headerName}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-white border-b  dark:border-gray-700">
+            <tr className="bg-white border-b  dark:border-gray-700">
               <th
                 scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
               ></th>
-              <td class="px-6 py-4 text-gray-900"></td>
+              <td className="px-6 py-4 text-gray-900"></td>
             </tr>
           </tbody>
         </table>

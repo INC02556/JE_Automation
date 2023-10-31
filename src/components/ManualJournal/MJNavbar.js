@@ -61,11 +61,11 @@ const MJNavbar = ({ setData, tableRef }) => {
         <h2 className="text-xl text-[#1D1D11] ">Manual Journal</h2>
 
         <div className=" flex flex-row gap-3 text-sm">
-          <button class="btn-white btn-icon" onClick={downloadExcelFile}>
+          <button className="btn-white btn-icon" onClick={downloadExcelFile}>
             <IoDocumentText /> Download Template
           </button>
           <button
-            class="btn-white btn-icon"
+            className="btn-white btn-icon"
             onClick={() => fileInputField.current.click()}
           >
             {" "}
@@ -80,13 +80,14 @@ const MJNavbar = ({ setData, tableRef }) => {
             placeholder="Upload  File"
           />
           <button
-            class="btn-white btn-icon"
+            className="btn-white btn-icon group"
             onClick={() => attachInputField.current.click()}
           >
             {" "}
             <ImAttachment />{" "}
             {files.length != 0 ? `Attachment (${files.length})` : "Attachment"}
           </button>
+          
           <input
             type="file"
             style={{ display: "none" }}
@@ -94,12 +95,12 @@ const MJNavbar = ({ setData, tableRef }) => {
             onChange={uploadAttachment}
             placeholder="Upload  File"
           />
-          <button class="btn-white " onClick={handleReset}>
+          <button className="btn-white " onClick={handleReset}>
             Clear
           </button>
 
-          <button class="btn-blue">Simulate</button>
-          <button class="btn-blue opacity-50 cursor-not-allowed">Submit</button>
+          <button className="btn-blue">Simulate</button>
+          <button className="btn-blue opacity-50 cursor-not-allowed">Submit</button>
         </div>
       </div>
     </nav>
