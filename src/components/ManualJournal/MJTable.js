@@ -52,7 +52,8 @@ const MJTable = ({ tabledata, tableRef }) => {
             <tr className="bg-[#DFEAFB]">
               {tableHeader?.map((item, index) => {
                 return (
-                  <th key={index}
+                  <th
+                    key={index}
                     style={{ whiteSpace: "nowrap" }}
                     className=" p-2  text-sm font-medium border border-[#E6E6E6"
                   >
@@ -75,14 +76,18 @@ const MJTable = ({ tabledata, tableRef }) => {
                   className="bg-white border-b  dark:border-gray-700"
                   key={index}
                 >
-                  {Object.values(row).map((value, index) => (
-                    <td
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
-                      key={index}
-                    >
-                      {value}
-                    </td>
-                  ))}
+                  {Object.values(row).map((value, index) => {
+                    if (index !== 0) {
+                      return (
+                        <td
+                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                          key={index}
+                        >
+                          {value}
+                        </td>
+                      );
+                    }
+                  })}
                 </tr>
               ))
             )}
@@ -92,10 +97,15 @@ const MJTable = ({ tabledata, tableRef }) => {
       <div></div>
       <div className="flex flex-row gap-4  justify-center text-sm mt-3">
         <button className="btn-white ">First</button>
-        <button className="btn-white opacity-50 cursor-not-allowed" disabled={true}>
+        <button
+          className="btn-white opacity-50 cursor-not-allowed"
+          disabled={true}
+        >
           Previous
         </button>
-        <button className="btn-white opacity-50 cursor-not-allowed">Next</button>
+        <button className="btn-white opacity-50 cursor-not-allowed">
+          Next
+        </button>
         <button className="btn-white ">Last</button>
       </div>
     </section>

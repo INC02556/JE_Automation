@@ -30,7 +30,10 @@ const MJNavbar = ({ setData, tableRef }) => {
         const workbook = XLSX.read(data, { type: "binary" });
         const sheetName = workbook.SheetNames[0];
         const sheet = workbook.Sheets[sheetName];
-        const parsedData = XLSX.utils.sheet_to_json(sheet);
+        const parsedData = XLSX.utils.sheet_to_json(sheet, {
+          defval: null,
+          raw: false,
+        });
         const resultData = {};
         resultData.header = parsedData[0];
         // resultData.headerData = parsedData[1];
