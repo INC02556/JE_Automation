@@ -37,7 +37,7 @@ const tableHeader = [
   "Sales Employee",
 ];
 
-const MJTable = ({ data, tableRef }) => {
+const MJTable = ({ tabledata, tableRef }) => {
   return (
     <section className="mt-10">
       <h2 className="text-xl font-semibold  text-[#1D1D11] mb-3">
@@ -63,14 +63,14 @@ const MJTable = ({ data, tableRef }) => {
             </tr>
           </thead>
           <tbody>
-            {data.length === 0 ? (
+            {!tabledata ? (
               <tr style={{ display: "table-row" }}>
                 <td colSpan={tableHeader.length} className="text-center p-3">
                   Please Upload Template to load data
                 </td>
               </tr>
             ) : (
-              data.map((row, index) => (
+              tabledata?.map((row, index) => (
                 <tr
                   className="bg-white border-b  dark:border-gray-700"
                   key={index}

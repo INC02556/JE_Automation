@@ -1,7 +1,7 @@
-import React,{useState,useRef} from 'react'
-import MJNavbar from '../components/ManualJournal/MJNavbar';
-import MJForm from '../components/ManualJournal/MJForm';
-import MJTable from '../components/ManualJournal/MJTable';
+import React, { useState, useRef } from "react";
+import MJNavbar from "../components/ManualJournal/MJNavbar";
+import MJForm from "../components/ManualJournal/MJForm";
+import MJTable from "../components/ManualJournal/MJTable";
 
 const accountsRecievable = [
   "Company Code",
@@ -23,7 +23,6 @@ const accountsRecievable = [
   "Payment Block",
   "Credit Control Area",
 ];
-
 
 const accountsPayable = [
   "Company Code",
@@ -49,28 +48,25 @@ const accountsPayable = [
   "Partner Bank Type",
 ];
 
-
-
 const ManualJournal = () => {
-  const  [data,setData]=useState([])
-  // const [files, setFiles] = useState([]);
-
-  const tableRef=useRef(null)
-    // const [selectedInput, setSelectedInput] = useState(accountsRecievable);
-    return (
-      <div className="mx-5 font-roborto shadow-sm">
-        <MJNavbar setData={setData} tableRef={tableRef}/>
-        <main className="p-3 ">
-          <p className="text-gray-600 inline-flex gap-2 text-sm">
-            <strong>Note:</strong>
-            <span>
-              Please Upload the template to start the Manual Journal process. If
-              you require the template , please choose the required process and/or
-              sub-process and click on Download Template. ***Line items entered
-              can not exceed 999***
-            </span>
-          </p>
-          {/* <div>
+  const [data, setData] = useState([]);
+  const tableRef = useRef(null);
+  console.log(data.tableItems)
+  // const [selectedInput, setSelectedInput] = useState(accountsRecievable);
+  return (
+    <div className="mx-5 font-roborto shadow-sm">
+      <MJNavbar setData={setData} tableRef={tableRef} />
+      <main className="p-3 ">
+        <p className="text-gray-600 inline-flex gap-2 text-sm">
+          <strong>Note:</strong>
+          <span>
+            Please Upload the template to start the Manual Journal process. If
+            you require the template , please choose the required process and/or
+            sub-process and click on Download Template. ***Line items entered
+            can not exceed 999***
+          </span>
+        </p>
+        {/* <div>
             <div>
               <label>Select Process</label>
             </div>
@@ -81,12 +77,12 @@ const ManualJournal = () => {
               <option>General Ledger Manual Process</option>
             </select>
           </div> */}
-  
-         <MJForm data={data} />
-          <MJTable data={data} tableRef={tableRef}/>
-        </main>
-      </div>
-    );
-}
 
-export default ManualJournal
+        <MJForm headerdata={data.header}  />
+        <MJTable tabledata={data.tableItems} tableRef={tableRef} />
+      </main>
+    </div>
+  );
+};
+
+export default ManualJournal;
