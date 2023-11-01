@@ -13,12 +13,10 @@ const generalLedger = [
   "Exchange Rate",
 ];
 
-const MJForm = ({ data ,setUpdateData }) => {
+const MJForm = ({ data  }) => {
   const headerdata = data[0]
   function updateHeaderData(e,int){
-    const updateData = data
-    updateData[0][int] = e.target.value
-    setUpdateData(updateData)
+    data[0][int] = e.target.value
   }
 
   return (

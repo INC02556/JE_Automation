@@ -40,29 +40,27 @@ const tableHeader = [
   "Sales Employee",
 ];
 
-const MJTable = ({ data, setData, setUpdateData, tableRef }) => {
+const MJTable = ({ data, setData, tableRef }) => {
   const [enableEdit, setEnableEdit] = useState(null);
 
   const enableRowForEdit = (index) => {
     setEnableEdit(index);
   };
   function handleInputChange(e, rowIndex, columnIndex) {
-    const updateData = data;
-    updateData[columnIndex][rowIndex] = e.target.value;
-    setUpdateData(updateData);
+    data[columnIndex][rowIndex] = e.target.value;
   }
   const handleAddRow = () => {
-    const newRow = data[data.length - 1];
+    const newRow ={...data[data.length - 1]} 
     Object.keys(newRow).map((key, index) => {
       newRow[key] = "";
     });
     setData([...data, newRow]);
   };
   function handleDeleteRow(index) {
-    console.log(index + 2);
     const updatedData = [...data];
     updatedData.splice(index + 2, 1);
     setData(updatedData);
+    setEnableEdit(null)
   }
   return (
     <section className="mt-10">
@@ -111,7 +109,7 @@ const MJTable = ({ data, setData, setUpdateData, tableRef }) => {
             </tr>
           </thead>
           <tbody>
-            {!data.slice(2) ? (
+            {data.slice(2).length === 0 ? (
               <tr style={{ display: "table-row" }}>
                 <td colSpan={tableHeader.length} className="text-center p-3">
                   Please Upload Template to load data
@@ -149,7 +147,8 @@ const MJTable = ({ data, setData, setUpdateData, tableRef }) => {
                           ) : (
                             <input
                               type="text"
-                              value={row[key]}
+                              defaultValue={row[key]}
+                              // value={row[key]}
                               onChange={(e) =>
                                 handleInputChange(e, key, columnIndex + 2)
                               }
