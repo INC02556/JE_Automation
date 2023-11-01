@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         roborto: ["Roboto"],
       },
+      backgroundColor: {
+        'bgJournal': '#BDBDBD', // Use your desired color and name
+        'secondary': '#ffed4a',
+      },
     },
     
   },

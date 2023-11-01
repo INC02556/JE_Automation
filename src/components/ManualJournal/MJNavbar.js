@@ -4,11 +4,14 @@ import { TfiUpload } from "react-icons/tfi";
 import { ImAttachment } from "react-icons/im";
 import * as XLSX from "xlsx";
 import ExcelTemplate from "../../tools/files/GL_MJ.xlsx";
+import {FaBars} from "react-icons/fa"
 
 const MJNavbar = ({ data, setData, updateData, tableRef }) => {
   const fileInputField = useRef(null);
   const attachInputField = useRef(null);
   const [files, setFiles] = useState([]);
+
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
   const handleReset = () => {
     setData([]);
@@ -76,7 +79,7 @@ const MJNavbar = ({ data, setData, updateData, tableRef }) => {
   return (
     <nav className="mt-10 p-2 border-y-[1px] bg-[#eff4f5ff] border-gray-400 ">
       <div className="flex flex-row justify-between  items-center">
-        <h2 className="text-xl text-[#1D1D11] ">Manual Journal</h2>
+        <h2 className="text-xl text-[#1D1D11] "> Journal Entry</h2>
 
         <div className=" flex flex-row gap-3 text-sm">
           <button className="btn-white btn-icon" onClick={downloadExcelFile}>
