@@ -6,7 +6,7 @@ import * as XLSX from "xlsx";
 import ExcelTemplate from "../../tools/files/GL_MJ.xlsx";
 import {FaBars} from "react-icons/fa"
 
-const MJNavbar = ({ data, setData, updateData, tableRef }) => {
+const MJNavbar = ({ data, setData, tableRef }) => {
   const fileInputField = useRef(null);
   const attachInputField = useRef(null);
   const [files, setFiles] = useState([]);
@@ -24,7 +24,6 @@ const MJNavbar = ({ data, setData, updateData, tableRef }) => {
 
   const handleFileUpload = (e) => {
     const reader = new FileReader();
-
     if (e.target.files[0]) {
       setData([]);
       reader.readAsBinaryString(e.target.files[0]);
@@ -38,6 +37,7 @@ const MJNavbar = ({ data, setData, updateData, tableRef }) => {
           raw: false,
         });
         setData(parsedData);
+        fileInputField.current.value = null;
       };
     }
   };
@@ -62,7 +62,7 @@ const MJNavbar = ({ data, setData, updateData, tableRef }) => {
   };
 
   function handleSubmitClick() {
-    if (updateData && updateData.length > 0) {
+    if (data && data.length > 0) {
       const worksheet = XLSX.utils.json_to_sheet(data);
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
@@ -97,7 +97,7 @@ const MJNavbar = ({ data, setData, updateData, tableRef }) => {
             accept=".xlsx, .xls"
             style={{ display: "none" }}
             ref={fileInputField}
-            onChange={handleFileUpload}
+            onChange={(e)=>handleFileUpload(e)}
             placeholder="Upload  File"
           />
           <div className="group   ">
