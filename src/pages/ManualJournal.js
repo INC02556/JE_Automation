@@ -80,7 +80,7 @@ const ManualJournal = () => {
           </div> */}
 
         <MJForm data={data}  setUpdateData={setUpdateData} />
-        <MJTable data={data} setUpdateData={setUpdateData}   tableRef={tableRef} />
+        <MJTable data={data} setData={setData} setUpdateData={setUpdateData}   tableRef={tableRef} />
       </main>
     </div>
   );
