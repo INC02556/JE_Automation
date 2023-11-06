@@ -17,6 +17,12 @@ const MainPage = () => {
             {/* <span className="text-4xl ml-5"><BsJournalBookmarkFill/></span> */}
           </div>
         </Link>
+        <Link to="/JournalEntry">
+          <div className="cursor-pointer p-6 bg-blue-200 box-border text-slate-600 rounded w-60 h-60 text-center font-semibold text-3xl">
+            Journal Entry
+            {/* <span className="text-4xl ml-5"><BsJournalBookmarkFill/></span> */}
+          </div>
+        </Link>
       </div>
     </div>
   );
