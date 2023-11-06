@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import {BsJournalBookmarkFill} from "react-icons/bs"
+import { BsJournalBookmarkFill } from "react-icons/bs";
+import { TfiSettings } from "react-icons/tfi";
+import { AiOutlineEdit } from "react-icons/ai";
 
 const MainPage = () => {
   return (
@@ -10,17 +12,17 @@ const MainPage = () => {
       </div>
 
       <br />
-      <div className="mx-5 grid grid-cols-3">
-        <Link to="/manualjournal">
-          <div className="cursor-pointer p-6 bg-blue-200 box-border text-slate-600 rounded w-60 h-60 text-center font-semibold text-3xl">
-            Manual journal
-            {/* <span className="text-4xl ml-5"><BsJournalBookmarkFill/></span> */}
+      <div className="mx-5 grid grid-cols-5 gap-10 h-60 ">
+        <Link to="/manualjournal" className="">
+          <div className="tile-box">
+            <h2 className="tile-title"> Manual journal</h2>
+            <BsJournalBookmarkFill className="tile-icon" />
           </div>
         </Link>
         <Link to="/JournalEntry">
-          <div className="cursor-pointer p-6 bg-blue-200 box-border text-slate-600 rounded w-60 h-60 text-center font-semibold text-3xl">
-            Journal Entry
-            {/* <span className="text-4xl ml-5"><BsJournalBookmarkFill/></span> */}
+          <div className="tile-box">
+            <h2 className="tile-title"> Journal Entry</h2>
+            <AiOutlineEdit className="tile-icon" />
           </div>
         </Link>
       </div>

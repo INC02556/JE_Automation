@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .btn-icon {
   @apply flex flex-row justify-between items-center gap-2;
@@ -16,10 +16,20 @@ label {
   @apply block  mb-1;
 }
 
-input{
+input {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
+}
+
+.tile-box {
+  @apply cursor-pointer flex flex-col justify-between  h-full px-4 py-6 bg-[#e7f5fc] box-border text-black rounded;
+}
+.tile-title {
+  @apply text-left font-roborto font-normal text-[25px];
+}
+.tile-icon {
+  @apply text-4xl ml-1 mb-8 text-blue-500;
 }
