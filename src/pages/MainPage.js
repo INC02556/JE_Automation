@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsJournalBookmarkFill } from "react-icons/bs";
+import { BsJournalBookmarkFill,BsFillFileEarmarkSpreadsheetFill } from "react-icons/bs";
 import { TfiSettings } from "react-icons/tfi";
 import { AiOutlineEdit } from "react-icons/ai";
 
@@ -13,18 +13,27 @@ const MainPage = () => {
 
       <br />
       <div className="mx-5 grid grid-cols-5 gap-10 h-60 ">
-        <Link to="/manualjournal" className="">
+        <Link to="/manual-journal" className="">
           <div className="tile-box">
             <h2 className="tile-title"> Manual journal</h2>
             <BsJournalBookmarkFill className="tile-icon" />
           </div>
         </Link>
-        <Link to="/JournalEntry">
+        <Link to="/journal-entry">
           <div className="tile-box">
             <h2 className="tile-title"> Journal Entry</h2>
             <AiOutlineEdit className="tile-icon" />
           </div>
         </Link>
+
+        
+        <Link to="/mass-upload">
+          <div className="tile-box">
+            <h2 className="tile-title"> Mass Upload</h2>
+            <BsFillFileEarmarkSpreadsheetFill className="tile-icon" />
+          </div>
+        </Link>
+
       </div>
     </div>
   );
