@@ -35,6 +35,15 @@ input {
 }
 
 
+
+/* Tab */
+.css-1ekdw8w-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #3026B9 !important;
+}
+
+/*  */
+
+
 /* Pagination */
 .pagination-container {
   display: flex;

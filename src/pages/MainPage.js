@@ -7,6 +7,7 @@ import {
 import { TfiSettings } from "react-icons/tfi";
 import { AiOutlineEdit } from "react-icons/ai";
 import { TbFileUpload } from "react-icons/tb";
+import { FaFileUpload } from "react-icons/fa";
 
 const MainPage = () => {
   return (
@@ -16,7 +17,7 @@ const MainPage = () => {
       </div>
 
       <br />
-      <div className="mx-5 grid grid-cols-5 gap-10 h-60 ">
+      <div className="mx-10 grid grid-cols-5 gap-5 h-60 ">
         <Link to="/manual-journal" className="">
           <div className="tile-box">
             <h2 className="tile-title"> Manual journal</h2>
@@ -43,6 +44,14 @@ const MainPage = () => {
             <TbFileUpload className="tile-icon" />
           </div>
         </Link>
+        <Link to="/single-upload-fbd1">
+          <div className="tile-box">
+            <h2 className="tile-title">Single Upload(FBD01)</h2>
+            <FaFileUpload className="tile-icon" />
+          </div>
+        </Link>
+
+        
       </div>
     </div>
   );

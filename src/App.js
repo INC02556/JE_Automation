@@ -5,6 +5,7 @@ import ManualJournal from './pages/ManualJournal';
 import JournalEntry from './pages/JournalEntry';
 import Massupload from './pages/Massupload';
 import SingleUpload from './pages/SingleUpload';
+import RecurringEntries from './pages/RecurringEntries';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Route path="journal-entry" element={<JournalEntry/>}></Route>
       <Route path="mass-upload" element={<Massupload/>}></Route>
       <Route path="single-upload" element={<SingleUpload/>}></Route>
+      <Route path="single-upload-fbd1"element={<RecurringEntries />}></Route>
     </Routes>
   );
 }
