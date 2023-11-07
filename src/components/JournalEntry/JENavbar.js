@@ -2,7 +2,8 @@ import React from "react";
 import { FaBars } from "react-icons/fa";
 import SILogo from "../../tools/images/SILogo.jpg";
 import Avatar from "react-avatar";
-import {ImCross} from "react-icons/im"
+import { ImAttachment } from "react-icons/im";
+import { ImCross } from "react-icons/im";
 
 const JENavbar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -21,11 +22,11 @@ const JENavbar = () => {
           />
         </div>
       </div>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-bgJournal mb-3">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-[#EFF4F5] mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full  flex xs:justify-between xs:flex-row flex-col xs:items-center">
             <h2
-              className="text-xl font-normal leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-black"
+              className="text-2xl font-semibold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-black"
               href="#pablo"
             >
               Journal Entry
@@ -37,8 +38,8 @@ const JENavbar = () => {
             >
               {navbarOpen ? <ImCross /> : <FaBars />}
             </button> */}
-          
-          {/* <div
+
+            {/* <div
             className={
               "lg:flex flex-grow items-center" +
               (navbarOpen ? " flex" : " hidden")
@@ -46,22 +47,25 @@ const JENavbar = () => {
             id="example-navbar-danger"
           > */}
             <ul className="flex lg:flex-row list-none lg:ml-auto gap-1 ml-auto ">
-            <li className="nav-item">
+              <li className="nav-item">
                 <button className="btn-white btn-icon text-sm">
-                  Clear
+                  {" "}
+                  <ImAttachment />
+                  Attachment
                 </button>
               </li>
               <li className="nav-item">
-                <button className="btn-white btn-icon text-sm">
-                  Save
-                </button>
+                <button className="btn-white btn-icon text-sm">Clear</button>
               </li>
-              
+              <li className="nav-item">
+                <button className="btn-white btn-icon text-sm">Save</button>
+              </li>
+
               <li className="nav-item">
                 <button className="btn-blue text-sm">Submit</button>
               </li>
             </ul>
-          {/* </div> */}
+            {/* </div> */}
           </div>
         </div>
       </nav>
