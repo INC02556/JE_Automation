@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsJournalBookmarkFill,BsFillFileEarmarkSpreadsheetFill } from "react-icons/bs";
+import {
+  BsJournalBookmarkFill,
+  BsFillFileEarmarkSpreadsheetFill,
+} from "react-icons/bs";
 import { TfiSettings } from "react-icons/tfi";
 import { AiOutlineEdit } from "react-icons/ai";
+import { TbFileUpload } from "react-icons/tb";
 
 const MainPage = () => {
   return (
@@ -26,7 +30,6 @@ const MainPage = () => {
           </div>
         </Link>
 
-        
         <Link to="/mass-upload">
           <div className="tile-box">
             <h2 className="tile-title"> Mass Upload</h2>
@@ -34,6 +37,12 @@ const MainPage = () => {
           </div>
         </Link>
 
+        <Link to="/single-upload">
+          <div className="tile-box">
+            <h2 className="tile-title">Single Upload</h2>
+            <TbFileUpload className="tile-icon" />
+          </div>
+        </Link>
       </div>
     </div>
   );

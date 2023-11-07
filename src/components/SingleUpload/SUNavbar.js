@@ -7,7 +7,7 @@ import { IoDocumentText } from "react-icons/io5";
 import { TfiUpload } from "react-icons/tfi";
 import { ImAttachment } from "react-icons/im";
 
-const MUNavbar = () => {
+const SUNavbar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
@@ -64,4 +64,4 @@ const MUNavbar = () => {
   );
 };
 
-export default MUNavbar;
+export default SUNavbar;

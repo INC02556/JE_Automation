@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
 import { Routes,Route } from 'react-router';
+import './App.css';
 import MainPage from './pages/MainPage';
 import ManualJournal from './pages/ManualJournal';
 import JournalEntry from './pages/JournalEntry';
 import Massupload from './pages/Massupload';
+import SingleUpload from './pages/SingleUpload';
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
       <Route path="manual-journal" element={<ManualJournal />}></Route>
       <Route path="journal-entry" element={<JournalEntry/>}></Route>
       <Route path="mass-upload" element={<Massupload/>}></Route>
+      <Route path="single-upload" element={<SingleUpload/>}></Route>
     </Routes>
   );
 }
