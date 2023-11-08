@@ -5,7 +5,7 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
+import { DateRangePicker } from "@mui/x-date-pickers-pro/DateRangePicker";
 
 const top100Films = [
   { label: "The Shawshank Redemption", year: 1994 },
@@ -136,6 +136,54 @@ const top100Films = [
 ];
 
 const JEInputs = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    if (inputValue.length > 0) {
+      setOpen(true);
+    }
+  };
+  const handleInputChange = (event, newInputValue) => {
+    setInputValue(newInputValue);
+    if (newInputValue.length > 0) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
+  };
+
+  const [inputValue2, setInputValue2] = useState("");
+  const [open2, setOpen2] = useState(false);
+  const handleOpen2 = () => {
+    if (inputValue2.length > 0) {
+      setOpen2(true);
+    }
+  };
+  const handleInputChange2 = (event, newInputValue) => {
+    setInputValue2(newInputValue);
+    if (newInputValue.length > 0) {
+      setOpen2(true);
+    } else {
+      setOpen2(false);
+    }
+  };
+
+  const [inputValue3, setInputValue3] = useState("");
+  const [open3, setOpen3] = useState(false);
+  const handleOpen3 = () => {
+    if (inputValue3.length > 0) {
+      setOpen2(true);
+    }
+  };
+  const handleInputChange3 = (event, newInputValue) => {
+    setInputValue3(newInputValue);
+    if (newInputValue.length > 0) {
+      setOpen3(true);
+    } else {
+      setOpen3(false);
+    }
+  };
+
   return (
     <div>
       {/* <input
@@ -150,38 +198,96 @@ const JEInputs = () => {
               <span className="text-red-700 ml-2">*</span>
             </label>
             <Autocomplete
-              disablePortal
-              sx={{ marginTop: "15px" }}
               id="combo-box-demo"
+              freeSolo
+              open={open}
+              onOpen={handleOpen}
+              onClose={() => setOpen(false)}
+              inputValue={inputValue}
+              onInputChange={handleInputChange}
               options={top100Films}
+              getOptionLabel={(option) => option.label}
+              sx={{ marginTop: "15px" }}
               size="small"
-              renderInput={(params) => <TextField {...params} />}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  placeholder="Company Code"
+                  variant="outlined"
+                />
+              )}
             />
           </div>
           <div>
             <label className="block mb-2 text-sm font-bold text-gray-900 ">
               Document Type <span className="text-red-700 ml-2">*</span>
             </label>
-            <Autocomplete
+            {/* <Autocomplete
               disablePortal
+              freeSolo
               id="combo-box-demo"
               sx={{ marginTop: "15px" }}
               options={top100Films}
               size="small"
-              renderInput={(params) => <TextField {...params} />}
+              renderInput={(params) => (
+                <TextField {...params} placeholder="Document Type" />
+              )}
+            /> */}
+            <Autocomplete
+              id="combo-box-demo2"
+              freeSolo
+              open={open2}
+              onOpen={handleOpen2}
+              onClose={() => setOpen2(false)}
+              inputValue={inputValue2}
+              onInputChange={handleInputChange2}
+              options={top100Films}
+              sx={{ marginTop: "15px" }}
+              getOptionLabel={(option) => option.label}
+              size="small"
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  placeholder="Document Type"
+                  variant="outlined"
+                />
+              )}
             />
           </div>
           <div>
             <label className="block mb-2 text-sm font-bold text-gray-900 ">
               GL Account <span className="text-red-700 ml-2">*</span>
             </label>
-            <Autocomplete
+            {/* <Autocomplete
               disablePortal
+              freeSolo
               id="combo-box-demo"
               sx={{ marginTop: "15px" }}
               options={top100Films}
               size="small"
-              renderInput={(params) => <TextField {...params} />}
+              renderInput={(params) => (
+                <TextField {...params} placeholder="GL Account" />
+              )}
+            /> */}
+            <Autocomplete
+              id="combo-box-demo2"
+              freeSolo
+              open={open3}
+              onOpen={handleOpen3}
+              onClose={() => setOpen3(false)}
+              inputValue={inputValue3}
+              onInputChange={handleInputChange3}
+              options={top100Films}
+              sx={{ marginTop: "15px" }}
+              getOptionLabel={(option) => option.label}
+              size="small"
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  placeholder="GL Account"
+                  variant="outlined"
+                />
+              )}
             />
           </div>
           <div>
@@ -216,7 +322,8 @@ const JEInputs = () => {
             </label>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={["DatePicker"]}>
-                <DateRangePicker localeText={{ start: 'Check-in', end: 'Check-out' }}
+                <DateRangePicker
+                  localeText={{ start: "From", end: "To" }}
                   sx={{ width: "100%" }}
                   slotProps={{ textField: { size: "small" } }}
                 />
@@ -233,6 +340,7 @@ const JEInputs = () => {
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
+              placeholder="Currency Code"
             />
           </div>
           <div>
@@ -245,11 +353,12 @@ const JEInputs = () => {
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
+              placeholder="From Document number"
             />
           </div>
           <div>
             <label className="block mb-2 text-sm font-bold  text-gray-900 ">
-              To Document Number <span className="text-red-700 ml-2">*</span>
+              To Document Number <span className="text-red-700 ml-2 ">*</span>
             </label>
             <TextField
               size="small"
@@ -257,9 +366,16 @@ const JEInputs = () => {
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
+              placeholder="To Document number"
             />
           </div>
         </div>
+        <button
+          className="btn-white btn-icon text-sm mt-5 ml-auto"
+          type="submit"
+        >
+          Apply Filter
+        </button>
       </form>
     </div>
   );

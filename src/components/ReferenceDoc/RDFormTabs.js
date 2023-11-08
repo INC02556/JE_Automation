@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React,{useState} from 'react'
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { BsFileEarmarkText } from "react-icons/bs";
-import JEInputs from "./JEInputs";
+import RDInputs from './RDInputs';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -32,18 +32,13 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-const JEFormTabs = ({setVisibleTable}) => {
-  //   const [activeTab, setActiveTab] = useState("tab1");
-  
+
+const RDFormTabs = () => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  //   const handleTabClick = (tabName) => {
-  //     setActiveTab(tabName);
-  //   };
 
   return (
     <div className="mx-4 border-2 rounded-md">
@@ -79,7 +74,7 @@ const JEFormTabs = ({setVisibleTable}) => {
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-          <JEInputs/>
+          <RDInputs/>
         </CustomTabPanel>
         {/* <CustomTabPanel value={value} index={1}>
         Item Two
@@ -89,7 +84,7 @@ const JEFormTabs = ({setVisibleTable}) => {
       </CustomTabPanel> */}
       </Box>
     </div>
-  );
-};
+  )
+}
 
-export default JEFormTabs;
+export default RDFormTabs
