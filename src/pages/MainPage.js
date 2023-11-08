@@ -19,7 +19,7 @@ const MainPage = () => {
       </div>
 
       <br />
-      <div className="mx-10 grid grid-cols-5 gap-5 h-60 ">
+      <div className="mx-10 grid grid-cols-5 gap-5  ">
         <Link to="/manual-journal" className="">
           <div className="tile-box">
             <h2 className="tile-title"> Manual journal</h2>
@@ -28,7 +28,7 @@ const MainPage = () => {
         </Link>
         <Link to="/journal-entry">
           <div className="tile-box">
-            <h2 className="tile-title"> Journal Entry</h2>
+            <h2 className="tile-title"> Journal Entry (FB05)</h2>
             <AiOutlineEdit className="tile-icon" />
           </div>
         </Link>
@@ -65,7 +65,6 @@ const MainPage = () => {
           </div>
         </Link>
 
-        
       </div>
     </div>
   );

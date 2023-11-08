@@ -33,7 +33,7 @@ function a11yProps(index) {
   };
 }
 
-const RDFormTabs = () => {
+const RDFormTabs = ({setTablleRow}) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -74,7 +74,7 @@ const RDFormTabs = () => {
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-          <RDInputs/>
+          <RDInputs setTablleRow={setTablleRow}/>
         </CustomTabPanel>
         {/* <CustomTabPanel value={value} index={1}>
         Item Two

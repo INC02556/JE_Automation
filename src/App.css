@@ -25,7 +25,8 @@ input {
 }
 
 .tile-box {
-  @apply cursor-pointer flex flex-col justify-between  h-full px-4 py-6 bg-[#e7f5fc] box-border text-black rounded;
+  @apply cursor-pointer h-60 flex flex-col justify-between  hover:border-blue-500 hover:shadow-lg overflow-hidden transition duration-700  border-2 px-4 py-6 bg-[#e7f5fc] box-border text-black rounded;
+
 }
 .tile-title {
   @apply text-left font-roborto font-normal text-[25px];

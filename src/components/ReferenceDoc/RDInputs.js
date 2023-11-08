@@ -7,7 +7,13 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DateRangePicker } from "@mui/x-date-pickers-pro/DateRangePicker";
 
-const RDInputs = () => {
+const RDInputs = ({ setTablleRow }) => {
+  const onClickApplyFilter = (e) => {
+    e.preventDefault();
+    setTablleRow([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    ]);
+  };
   return (
     <div>
       <form action="">
@@ -171,10 +177,11 @@ const RDInputs = () => {
           </div>
         </div>
         <button
-          className="btn-white btn-icon text-sm mt-5 ml-auto"
           type="submit"
+          className="btn-white btn-icon text-sm mt-5 ml-auto"
+          onClick={onClickApplyFilter}
         >
-          Apply Filter
+          Apply Filter 
         </button>
       </form>
     </div>

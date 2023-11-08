@@ -161,7 +161,7 @@ const MUInputs = () => {
               sx={{ marginTop: "15px" }}
               id="combo-box-demo"
               options={top100Films}
-              size="small"
+               size="small" 
               renderInput={(params) => <TextField {...params} />}
             />
           </div>
@@ -174,7 +174,7 @@ const MUInputs = () => {
               id="combo-box-demo"
               sx={{ marginTop: "15px" }}
               options={top100Films}
-              size="small"
+               size="small" 
               renderInput={(params) => <TextField {...params} />}
             />
           </div>
@@ -219,11 +219,11 @@ const MUInputs = () => {
           </div>
           <div>
             <label className="block mb-2 text-sm font-bold text-gray-900 ">
-              Reference <span className="text-red-700 ml-2">*</span>
+              Reference 
             </label>
             <TextField
               id="outlined-basic"
-              size="small"
+               size="small" placeholder="Reference"
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
@@ -235,7 +235,7 @@ const MUInputs = () => {
             </label>
             <TextField
               id="outlined-basic"
-              size="small"
+               size="small" placeholder="Doc. Header Text"
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
@@ -247,7 +247,7 @@ const MUInputs = () => {
             </label>
             <TextField
               id="outlined-basic"
-              size="small"
+               size="small" placeholder="Currency Rate"
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
@@ -259,7 +259,7 @@ const MUInputs = () => {
             </label>
             <TextField
               id="outlined-basic"
-              size="small"
+               size="small" placeholder="Ledger Group"
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
@@ -271,7 +271,7 @@ const MUInputs = () => {
             </label>
             <TextField
               id="outlined-basic"
-              size="small"
+               size="small" placeholder="Exchange Rate"
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
@@ -283,7 +283,7 @@ const MUInputs = () => {
             </label>
             <TextField
               id="outlined-basic"
-              size="small"
+               size="small" placeholder="Cross CC No."
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
@@ -295,7 +295,7 @@ const MUInputs = () => {
             </label>
             <TextField
               id="outlined-basic"
-              size="small"
+               size="small" placeholder="Trading Partner BA"
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
@@ -308,7 +308,7 @@ const MUInputs = () => {
             </label>
             <TextField
               id="outlined-basic"
-              size="small"
+               size="small" placeholder="Calculation Tax"
               margin="dense"
               sx={{ width: "100%" }}
               variant="outlined"
@@ -327,7 +327,7 @@ const MUInputs = () => {
                 // defaultValue={currentDate}
                 // value={}
                 onChange={handleYearChange}
-                // renderInput={(params) => <TextField {...params} size="small" />}
+                // renderInput={(params) => <TextField {...params}  size="small" placeholder="Document type" />}
               />
             </LocalizationProvider>
           </div> */}
