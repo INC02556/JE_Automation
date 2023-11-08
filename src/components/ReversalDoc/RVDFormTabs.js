@@ -35,7 +35,7 @@ function CustomTabPanel(props) {
     };
   }
 
-const RVDFormTabs = () => {
+const RVDFormTabs = ({setTablleRow}) => {
     const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
@@ -76,7 +76,7 @@ const RVDFormTabs = () => {
             </Tabs>
           </Box>
           <CustomTabPanel value={value} index={0}>
-            <RVDInputs/>
+            <RVDInputs setTablleRow={setTablleRow}/>
           </CustomTabPanel>
           {/* <CustomTabPanel value={value} index={1}>
           Item Two

@@ -32,7 +32,7 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-const JEFormTabs = ({setVisibleTable}) => {
+const JEFormTabs = ({setTablleRow}) => {
   //   const [activeTab, setActiveTab] = useState("tab1");
   
   const [value, setValue] = useState(0);
@@ -79,7 +79,7 @@ const JEFormTabs = ({setVisibleTable}) => {
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-          <JEInputs/>
+          <JEInputs setTablleRow={setTablleRow}/>
         </CustomTabPanel>
         {/* <CustomTabPanel value={value} index={1}>
         Item Two
