@@ -40,7 +40,7 @@ const MainPage = () => {
 
         <Link to="/single-upload">
           <div className="tile-box">
-            <h2 className="tile-title">Single Upload</h2>
+            <h2 className="tile-title">Single Upload (FB01/FB41/FBS1)</h2>
             <TbFileUpload className="tile-icon" />
           </div>
         </Link>
