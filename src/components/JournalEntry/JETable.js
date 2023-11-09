@@ -3,8 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdAddCircle } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from "../../utils/Pagination";
-import Checkbox from '@mui/material/Checkbox';
-
+import Checkbox from "@mui/material/Checkbox";
 
 const tableHeaders = [
   { id: 1, item: "Posting Key" },
@@ -22,7 +21,7 @@ const tableRow = [
 
 let PageSize = 2;
 
-const label={inputProps: { 'aria-label': 'Checkbox demo' }}
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const JETable = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -45,7 +44,9 @@ const JETable = () => {
 
   const toggleRowCheckbox = (row) => {
     if (selectedRows.includes(row)) {
-      setSelectedRows(selectedRows.filter((selectedRow) => selectedRow !== row));
+      setSelectedRows(
+        selectedRows.filter((selectedRow) => selectedRow !== row)
+      );
     } else {
       setSelectedRows([...selectedRows, row]);
     }
@@ -71,7 +72,6 @@ const JETable = () => {
                     checked={selectedRows.length === currentTableData.length}
                     onChange={toggleAllCheckboxes}
                   />
-                  
                 </th>
                 {tableHeaders.map(({ id, item }) => (
                   <th key={id} scope="col" className="px-6 py-3">
