@@ -7,6 +7,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DateRangePicker } from "@mui/x-date-pickers-pro/DateRangePicker";
 
+
 const top100Films = [
   { label: "The Shawshank Redemption", year: 1994 },
   { label: "The Godfather", year: 1972 },
@@ -135,7 +136,8 @@ const top100Films = [
   { label: "Monty Python and the Holy Grail", year: 1975 },
 ];
 
-const JEInputs = () => {
+const JEInputs = ({setTablleRow}) => {
+  
   const [inputValue, setInputValue] = useState("");
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -182,6 +184,13 @@ const JEInputs = () => {
     } else {
       setOpen3(false);
     }
+  };
+
+  const onClickApplyFilter = (e) => {
+    e.preventDefault();
+    setTablleRow([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    ]);
   };
 
   return (
@@ -373,6 +382,7 @@ const JEInputs = () => {
         <button
           className="btn-white btn-icon text-sm mt-5 ml-auto"
           type="submit"
+          onClick={onClickApplyFilter}
         >
           Apply Filter
         </button>

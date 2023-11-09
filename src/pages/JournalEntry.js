@@ -8,6 +8,7 @@ const JournalEntry = () => {
   const [data, setData] = useState([]);
   const [updateData, setUpdateData] = useState([]);
   const tableRef = useRef(null);
+  const [tableRow,setTablleRow] = useState([])
 
   // const [selectedInput, setSelectedInput] = useState(accountsRecievable);
   return (
@@ -15,11 +16,12 @@ const JournalEntry = () => {
       <JENavbar />
       <main className="p-3 ">
         <div className="border-box mt-3">
-          <JEFormTabs />
+          <JEFormTabs setTablleRow={setTablleRow}/>
         </div>
 
         <div className="border-box mt-3">
-          <JETable />
+         
+          {tableRow.length !==0 ?  (<JETable tableRow={tableRow} />) : ""}
         </div>
       </main>
     </div>
